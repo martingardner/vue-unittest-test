@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="row in this.tabledata" :key="row.id">
+        <tr @click="rowClick(row.id)" v-for="row in this.tabledata" :key="row.id">
           <td>{{row.id}}</td>
           <td>{{row.location}}</td>
           <td>{{row.code}}</td>
@@ -26,7 +26,8 @@ export default {
   name: "Table",
   data() {
     return {
-      tabledata: []
+      tabledata: [],
+      drilldown: false
     };
   },
   props: ["data"],
@@ -35,6 +36,10 @@ export default {
       if (Array.isArray(this.data)) {
         this.tabledata = this.data;
       }
+    },
+    rowClick(id) {
+      console.log("id", id);
+      this.$emit("rowClicked", id);
     }
   },
   created() {

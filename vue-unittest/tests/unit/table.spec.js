@@ -1,5 +1,4 @@
 import { shallowMount } from "@vue/test-utils";
-import Vue from "vue";
 import Table from "@/components/Table.vue";
 
 describe("Table.vue", () => {
@@ -10,7 +9,6 @@ describe("Table.vue", () => {
     { id: 4, location: "WI", code: "E", price: "12.99" },
     { id: 5, location: "TX", code: "F", price: "18.99" }
   ];
-
   const nonArray = { id: 1, location: "MN", code: "F", price: "19.99" };
 
   test("Table.vue is a vue instance", () => {

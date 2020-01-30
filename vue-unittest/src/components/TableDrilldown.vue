@@ -1,10 +1,22 @@
 <template>
-  <div>
+  <div class="table-drilldown">
     <h4>TableDrilldown</h4>
-    <div>id: {{data.id}}</div>
-    <div>location: {{ data.location }}</div>
-    <div>code: {{ data.code }}</div>
-    <div>price: {{ data.price }}</div>
+    <div>
+      id:
+      <span class="data-id" v-if="data && data.id">{{data.id}}</span>
+    </div>
+    <div>
+      location:
+      <span class="data-location" v-if="data && data.location">{{ data.location }}</span>
+    </div>
+    <div>
+      code:
+      <span class="data-code" v-if="data && data.code">{{ data.code }}</span>
+    </div>
+    <div>
+      price:
+      <span class="data-price" v-if="data && data.price">{{ data.price }}</span>
+    </div>
     <div>
       <button @click="backButton">back</button>
     </div>

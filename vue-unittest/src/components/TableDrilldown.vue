@@ -18,12 +18,19 @@
       <span class="data-price" v-if="data && data.price">{{ data.price }}</span>
     </div>
     <div>
-      <button @click="backButton">back</button>
+      <b-button variant="outline-primary" @click="backButton">back</b-button>
     </div>
+    <div>
+      <b-button variant="primary" @click="modalOpen">modal</b-button>
+    </div>
+
+    <TestModal></TestModal>
   </div>
 </template>
 
 <script>
+import TestModal from "@/components/TestModal.vue";
+
 export default {
   name: "TableDrilldown",
   data() {
@@ -33,7 +40,13 @@ export default {
   methods: {
     backButton() {
       this.$emit("drilldownClicked");
+    },
+    modalOpen() {
+      this.$bvModal.show("TestModal");
     }
+  },
+  components: {
+    TestModal
   }
 };
 </script>

@@ -31,9 +31,8 @@ export default {
       this.drilldown = !this.drilldown;
     },
     onRowClicked(id) {
-      console.log("onRowClicked", id);
-      let index = this.tabledata.findIndex(x => x.id === id);
-      console.log("onRowClicked", index);
+      const index = this.tabledata.findIndex(x => x.id === id);
+
       if (this.tabledata[index]) {
         this.datarow = this.tabledata[index];
         this.drilldownStatus();
